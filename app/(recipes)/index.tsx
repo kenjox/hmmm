@@ -7,7 +7,7 @@ export default function RecipesPage() {
   return (
     <View className="flex-1">
       <FlatList
-        contentContainerStyle={{ marginTop: 20 }}
+        contentContainerStyle={{ marginBottom: 10 }}
         data={data}
         renderItem={({ item }) => <RecipeCard recipe={item} />}
       />

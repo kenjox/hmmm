@@ -5,7 +5,8 @@ export const data: Recipe[] = [
     id: 1,
     title: 'Pasta bolognese',
     duration: 30,
-    photoUrl: 'https://picsum.photos/seed/696/3000/2000',
+    photoUrl:
+      'https://images.unsplash.com/photo-1695742434600-e0f59629d2bb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     categories: [
       {
         id: 1,
@@ -34,7 +35,8 @@ export const data: Recipe[] = [
     id: 2,
     title: 'Chicken Curry',
     duration: 45,
-    photoUrl: 'https://picsum.photos/seed/697/3000/2000',
+    photoUrl:
+      'https://images.unsplash.com/photo-1697155406127-76096502d69d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     categories: [
       {
         id: 2,
@@ -64,7 +66,8 @@ export const data: Recipe[] = [
     id: 3,
     title: 'Beef Stew',
     duration: 60,
-    photoUrl: 'https://picsum.photos/seed/698/3000/2000',
+    photoUrl:
+      'https://images.unsplash.com/photo-1664741662725-bd131742b7b7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     categories: [
       {
         id: 3,
@@ -94,7 +97,8 @@ export const data: Recipe[] = [
     id: 4,
     title: 'Caesar Salad',
     duration: 20,
-    photoUrl: 'https://picsum.photos/seed/699/3000/2000',
+    photoUrl:
+      'https://images.unsplash.com/photo-1512852939750-1305098529bf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     categories: [
       {
         id: 4,
@@ -121,7 +125,8 @@ export const data: Recipe[] = [
     id: 5,
     title: 'Vegetable Stir Fry',
     duration: 25,
-    photoUrl: 'https://picsum.photos/seed/700/3000/2000',
+    photoUrl:
+      'https://images.unsplash.com/photo-1604909052743-94e838986d24?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     categories: [
       {
         id: 1,

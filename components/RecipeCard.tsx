@@ -20,13 +20,13 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         },
       }}
       asChild
+      className="mb-2"
     >
-      <TouchableOpacity
-        activeOpacity={0.8}
-        className="border-1 mx-5 mb-4 h-[230px] rounded-md border border-gray-300 bg-[#FFF9F9] shadow-lg"
-      >
-        <Image className="flex-1" source={photoUrl} contentFit="cover" />
-        <View className="space-y-2 p-5 shadow-lg">
+      <TouchableOpacity activeOpacity={0.8}>
+        <View className="h-[230px]">
+          <Image className="flex-1" source={photoUrl} contentFit="cover" />
+        </View>
+        <View className="space-y-2 p-2 shadow-lg">
           <View className="flex flex-row justify-between">
             <Text className="text-lg text-gray-500">{title}</Text>
             <Text className="text-lg text-gray-500">{duration}min</Text>
