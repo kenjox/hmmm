@@ -21,11 +21,11 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         },
       }}
       asChild
-      className="mb-5 rounded-lg border-0 bg-white shadow-lg"
+      className="mb-5 rounded-lg border-0 bg-white shadow-sm"
     >
       <TouchableOpacity activeOpacity={0.9}>
         <Image
-          className="h-[180px] rounded-md border-0"
+          className="h-[180px] rounded-t-md border-0"
           source={photoUrl}
           contentFit="cover"
         />

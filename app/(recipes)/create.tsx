@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 import React from 'react';
 
 export default function CreateRecipePage() {
   return (
     <View>
-      <Text>CreateRecipePage</Text>
+      <TextInput />
     </View>
   );
 }
