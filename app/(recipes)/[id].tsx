@@ -3,6 +3,7 @@ import React from 'react';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { Image } from 'expo-image';
 import { Recipe } from '../../types';
+import { CategoriesTags } from '../../components/RecipeCategories';
 
 export default function DetailRecipePage() {
   const { data } = useLocalSearchParams();
@@ -13,31 +14,22 @@ export default function DetailRecipePage() {
     <ScrollView>
       <Stack.Screen options={{ title }} />
       <View className="rounded-md border-0 border-gray-300 bg-[#FFF9F9] px-0 pb-5 shadow-lg">
-        <View className="h-[250px]">
-          <Image className="flex-1" source={photoUrl} contentFit="cover" />
-        </View>
+        <Image
+          className="h-[250px] flex-1"
+          source={photoUrl}
+          contentFit="cover"
+        />
+
         <View className="space-y-2 p-5 shadow-lg">
+          <CategoriesTags categories={categories} />
           <View className="flex flex-row justify-between">
             <Text className="text-lg text-gray-500">{title}</Text>
             <Text className="text-lg text-gray-500">{duration}min</Text>
           </View>
-          <View className="flex flex-row flex-wrap gap-1">
-            {categories.length > 0 &&
-              categories.map(({ id, name }) => (
-                <View
-                  key={id}
-                  className="w-1/4 rounded-md bg-[#F4F5F7] p-1 shadow-md"
-                >
-                  <Text className="text-center font-bold tracking-wide text-gray-500">
-                    {name}
-                  </Text>
-                </View>
-              ))}
-          </View>
         </View>
-        <View className="mb-2 mt-2 px-5">
-          <Text className="text-xl font-bold text-gray-500">Ingredients</Text>
-        </View>
+        <Text className="mb-2 mt-2 px-5 text-xl font-bold text-gray-500">
+          Ingredients
+        </Text>
         <View className="mx-5">
           {ingredients.length > 0 &&
             ingredients.map((item, index) => (

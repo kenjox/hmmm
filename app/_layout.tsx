@@ -5,7 +5,12 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function RootLayout() {
   return (
-    <Tabs>
+    <Tabs
+      initialRouteName="(recipes)"
+      screenOptions={{
+        tabBarActiveTintColor: '#000',
+      }}
+    >
       <Tabs.Screen
         name="(recipes)"
         options={{
@@ -17,7 +22,7 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="(groceries)/index"
+        name="(groceries)"
         options={{
           title: 'Shopping List',
           headerShown: false,

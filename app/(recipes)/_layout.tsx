@@ -14,15 +14,11 @@ export default function RecipeLayout() {
             </TouchableOpacity>
           </Link>
         ),
-        headerTintColor: '#2563eb',
       }}
     >
       <Stack.Screen name="index" options={{ title: 'Recipes' }} />
       <Stack.Screen name="[id]" />
-      <Stack.Screen
-        name="create"
-        options={{ title: 'Add new recipe', presentation: 'modal' }}
-      />
+      <Stack.Screen name="create" options={{ title: 'Add new recipe' }} />
     </Stack>
   );
 }

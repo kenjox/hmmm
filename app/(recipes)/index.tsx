@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
-import RecipeCard from '../../components/RecipeCard';
+import { RecipeCard } from '../../components/RecipeCard';
 import { data } from '../../data';
+import { SearchBar } from '../../components/SearchBar';
 
-export default function RecipesPage() {
+export default function RecipesScreen() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
-    <View className="flex-1">
+    <View className="mx-5 flex-1">
+      <SearchBar
+        searchTerm={searchTerm}
+        onSearch={() => console.log('Search recipe')}
+      />
       <FlatList
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{ marginBottom: 10 }}
         data={data}
         renderItem={({ item }) => <RecipeCard recipe={item} />}

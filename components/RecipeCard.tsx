@@ -3,12 +3,13 @@ import React from 'react';
 import { Image } from 'expo-image';
 import { Recipe } from '../types';
 import { Link } from 'expo-router';
+import { CategoriesTags } from './RecipeCategories';
 
 type RecipeCardProps = {
   recipe: Recipe;
 };
 
-export default function RecipeCard({ recipe }: RecipeCardProps) {
+export function RecipeCard({ recipe }: RecipeCardProps) {
   const { id, title, duration, photoUrl, categories } = recipe;
 
   return (
@@ -20,29 +21,19 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         },
       }}
       asChild
-      className="mb-2"
+      className="mb-5 rounded-lg border-0 bg-white shadow-lg"
     >
-      <TouchableOpacity activeOpacity={0.8}>
-        <View className="h-[230px]">
-          <Image className="flex-1" source={photoUrl} contentFit="cover" />
-        </View>
-        <View className="space-y-2 p-2 shadow-lg">
+      <TouchableOpacity activeOpacity={0.9}>
+        <Image
+          className="h-[180px] rounded-md border-0"
+          source={photoUrl}
+          contentFit="cover"
+        />
+        <View className="space-y-2 p-2">
+          <CategoriesTags categories={categories} />
           <View className="flex flex-row justify-between">
             <Text className="text-lg text-gray-500">{title}</Text>
             <Text className="text-lg text-gray-500">{duration}min</Text>
-          </View>
-          <View className="flex flex-row flex-wrap gap-1">
-            {categories.length > 0 &&
-              categories.map(({ id, name }) => (
-                <View
-                  key={id}
-                  className="w-1/4 rounded-md bg-[#F4F5F7] p-1 shadow-md"
-                >
-                  <Text className="text-center font-bold tracking-wide text-gray-500">
-                    {name}
-                  </Text>
-                </View>
-              ))}
           </View>
         </View>
       </TouchableOpacity>
