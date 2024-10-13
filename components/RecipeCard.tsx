@@ -36,7 +36,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
               categories.map(({ id, name }) => (
                 <View
                   key={id}
-                  className="w-1/3 rounded-md bg-[#F4F5F7] p-1 shadow-md"
+                  className="w-1/4 rounded-md bg-[#F4F5F7] p-1 shadow-md"
                 >
                   <Text className="text-center font-bold tracking-wide text-gray-500">
                     {name}
