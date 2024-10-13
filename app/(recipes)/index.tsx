@@ -5,18 +5,32 @@ import { data } from '../../data';
 import { SearchBar } from '../../components/SearchBar';
 
 export default function RecipesScreen() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [recipes, setRecipes] = useState(data);
+
+  const searchRecipe = (term: string) => {
+    if (!term) {
+      setRecipes(data);
+    } else {
+      setRecipes(
+        recipes.filter(
+          (recipe) =>
+            recipe.title.toLowerCase().includes(term) ||
+            recipe.duration.toString().includes(term) ||
+            recipe.categories.some((category) =>
+              category.name.toLowerCase().includes(term),
+            ),
+        ),
+      );
+    }
+  };
 
   return (
     <View className="mx-5 flex-1">
-      <SearchBar
-        searchTerm={searchTerm}
-        onSearch={() => console.log('Search recipe')}
-      />
+      <SearchBar onSearch={searchRecipe} />
       <FlatList
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ marginBottom: 10 }}
-        data={data}
+        data={recipes}
         renderItem={({ item }) => <RecipeCard recipe={item} />}
       />
     </View>

@@ -1,12 +1,18 @@
 import { View, TextInput } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 type SearchBarProps = {
-  searchTerm: string;
-  onSearch: () => void;
+  onSearch: (term: string) => void;
 };
 
-export function SearchBar({ searchTerm, onSearch }: SearchBarProps) {
+export function SearchBar({ onSearch }: SearchBarProps) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const searchForTerm = (term: string) => {
+    setSearchTerm(term);
+    onSearch(term.toLowerCase());
+  };
+
   return (
     <View className="my-3 flex h-14 flex-row">
       <TextInput
@@ -16,7 +22,7 @@ export function SearchBar({ searchTerm, onSearch }: SearchBarProps) {
         autoCorrect={false}
         clearButtonMode="always"
         value={searchTerm}
-        onEndEditing={onSearch}
+        onChangeText={searchForTerm}
       />
     </View>
   );
